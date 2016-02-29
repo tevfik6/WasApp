@@ -1,0 +1,32 @@
+.drawer-profile .drawer-title,
+.media-panel-header {
+    margin-top:25px;
+}
+.pane-header,.drawer-header-small {
+    height:84px !important;
+}
+.drawer-info .pane-header,
+.pane-header.pane-list-header,
+.pane-header.pane-chat-header {
+    padding-top:35px !important;
+}
+.drawer-header {
+    height:133px !important;
+}
+
+#settings-window .section {
+    padding:5px 0px;
+}
+#settings-window .section:first{
+    padding-top:15px;
+}
+#settings-window  .checkbox-wrapper{
+    display: inline-block;
+    vertical-align: text-bottom;
+    -webkit-margin-end: 10px;
+}
+#settings-window  .checkbox-text{
+    display:inline-block;
+    vertical-align: text-bottom;
+    margin-bottom: -3px;
+}
