@@ -21,6 +21,9 @@ npm run build
 ## Know Issues
 When window is invisible, nofitication cannot reveal the window.
 
+## Download
+[Latest Release - v1.0.0](https://github.com/tevfik6/WasApp/releases/tag/v1.0.0) 
+
 ## Credits
 Programmed by [Tevfik Tümer](http://tevfik.me)
 Icon designed by [Samed Tümer](http://samed.tumblr.com/)
