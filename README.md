@@ -5,6 +5,10 @@ This application is not an official product of WhatsApp. It is just a wrapper fo
 
 All communication between the user and WhatsApp servers is handled by official WhatsApp Web App (https://web.whatsapp.com/)
 
+## Simple Settings
+
+WhatsApp Web has it's own settings options. You can use all the preferences. Beside that there are two more features `Hide On Blur` and `Hide Dock Icon` options when you right click on tray icon. 
+
 ## Contribution
 ```sh
 # Run
