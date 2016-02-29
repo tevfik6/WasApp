@@ -67,7 +67,7 @@ App.on('before-quit', function () {
     mainWindow.forceClose = true
 })
 
-App.on('activate-with-no-open-windows', function () {
+App.on('activate', function () {
     mainWindow.show()
 })
 
@@ -189,6 +189,45 @@ App.on('ready', function () {
         else {
             mainWindow.show()
         }
+    })
+    trayIcon.on('right-click', function () {
+        var contextMenu = Menu.buildFromTemplate([
+            { 
+                label: 'Hide Dock Icon',
+                type: 'checkbox',
+                checked: defaultSettings.hideDockIcon,
+                click: function () {
+                    changeSettings('hideDockIcon', !defaultSettings.hideDockIcon);
+                }
+            },
+            {
+                label: 'Hide On Blur',
+                type: 'checkbox',
+                checked: defaultSettings.hideOnBlur,
+                click: function () {
+                    changeSettings('hideOnBlur', !defaultSettings.hideOnBlur);
+                }
+            },
+            { type: 'separator' },
+            {
+                label: 'Delete Cache and Reload',
+                click: function () {
+                    try { Fs.unlinkSync( cacheIndex ) } catch (e) { }
+                    mainWindow.reload()
+                }
+            },
+            { type: 'separator' },
+            {
+                label: 'About '+App.getName(),
+                selector: 'orderFrontStandardAboutPanel:'
+            },
+            {
+                label: 'Quit',
+                accelerator: 'Command+Q',
+                selector: 'terminate:'
+            },
+          ]);
+        trayIcon.popUpContextMenu(contextMenu);
     })
 });
 
