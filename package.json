@@ -1,13 +1,13 @@
 {
   "name": "WasApp",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Unofficial WhatsApp Desktop App",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager ./ WasApp --ignore='node_modules/(electron-packager|electron-prebuilt)' --platform=darwin --arch=x64 --version=0.36.9 --asar=true --icon=./icons/icon.icns --overwrite --app-version=0.3.0 --version-string.CompanyName='Tevfik Tümer' --version-string.ProductName='UnOfficial WhatsApp App' --out=./builds/"
+    "build": "electron-packager ./ WasApp --ignore='node_modules/(electron-packager|electron-prebuilt)' --platform=darwin --arch=x64 --version=0.36.9 --asar=true --icon=./icons/icon.icns --overwrite --app-version=1.0.0 --version-string.CompanyName='Tevfik Tümer' --version-string.ProductName='UnOfficial WhatsApp App' --out=./builds/"
   },
-  "author": "Tevfik Tümer <tevfik@tuemer.me> (https://tuemer.me)",
+  "author": "Tevfik Tümer <tevfik@tuemer.me> (http://tevfik.me)",
   "license": "MIT",
   "devDependencies": {
     "electron-packager": "^5.2.1",
