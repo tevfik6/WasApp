@@ -1,9 +1,9 @@
 # WasApp - Unofficial WhatsApp for Mac
 WasApp is an app uses WhatsApp Web interface on :zap:[Electron](https://electron.atom.io/) framework.
 
-This application is not an official product of WhatsApp. It is just a wrapper for WhatsApp Web interface in a browser.
+#### This application is not an official product of WhatsApp. It is just a wrapper for WhatsApp Web interface in a browser
 
-All communication between the user and WhatsApp servers is handled by official WhatsApp Web App (https://web.whatsapp.com/)
+#### All communication between the user and WhatsApp servers is handled by official WhatsApp Web App (https://web.whatsapp.com/)
 
 # Download
 :floppy_disk: [Latest Release - v1.0.0](https://github.com/tevfik6/WasApp/releases/tag/v1.0.0) 
