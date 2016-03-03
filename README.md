@@ -1,29 +1,42 @@
-## WasApp - Unofficial WhatsApp Application for Mac
-WasApp is an app uses WhatsApp Web interface on [Electron](https://electron.atom.io/) framework.
+# WasApp - Unofficial WhatsApp for Mac
+WasApp is an app uses WhatsApp Web interface on :zap:[Electron](https://electron.atom.io/) framework.
 
 This application is not an official product of WhatsApp. It is just a wrapper for WhatsApp Web interface in a browser.
 
 All communication between the user and WhatsApp servers is handled by official WhatsApp Web App (https://web.whatsapp.com/)
 
-## Simple Settings
+# Download
+:floppy_disk: [Latest Release - v1.0.0](https://github.com/tevfik6/WasApp/releases/tag/v1.0.0) 
 
-WhatsApp Web has it's own settings options. You can use all the preferences. Beside that there are two more features `Hide On Blur` and `Hide Dock Icon` options when you right click on tray icon. 
+# Screeshot
+![WasApp Logo](images/ScreenShot01.png)
 
-## Contribution
+# Features
+WhatsApp Web has it's own settings. You can use all the preferences. 
+
+#### Settings in Tray Icon on Right Click
+* `Hide On Blur` 
+* `Hide Dock Icon` 
+* `Delete Cache and Reload`
+
+![WasApp Tray Icon](images/ScreenShot02.png)
+
+#### Message Counts on Dock
+![WasApp Dock Icon](images/ScreenShot03.png)
+
+
+# Know Issues
+When window is invisible, nofitication cannot reveal the window.
+
+# Contribution
 ```sh
-# Run
+# Start on Debug
 npm start
 
 # Build
 npm run build
 ```
 
-## Know Issues
-When window is invisible, nofitication cannot reveal the window.
-
-## Download
-[Latest Release - v1.0.0](https://github.com/tevfik6/WasApp/releases/tag/v1.0.0) 
-
 ## Credits
-Programmed by [Tevfik Tümer](http://tevfik.me)
-Icon designed by [Samed Tümer](http://samed.tumblr.com/)
+* Programmed by [Tevfik Tümer](http://tevfik.me)
+* Icon designed by [Samed Tümer](http://samed.tumblr.com/)
