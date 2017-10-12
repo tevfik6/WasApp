@@ -1,52 +1,46 @@
+var $tev = require("jquery");
+var ipcR = require('electron').ipcRenderer
+var debounceTimer; 
 var updateDockNum;
-$(function(){
-	// console.log("defaultSettings", defaultSettings);
-
-	var wasApp = {
-        messageCount: 0,
+$tev(function() {
+    var wasApp = {
         settings: defaultSettings
     };
     // console.log("wasApp", wasApp);
-
-    var changeSettings = function (key, value) {
+    var changeSettings = function(key, value) {
         // console.log(key, value);
         wasApp.settings[key] = value;
-		wasApp['changedSettings'] = {};
-		wasApp['changedSettings'][key] = value;
+        wasApp['changedSettings'] = {};
+        wasApp['changedSettings'][key] = value;
         // console.log("wasApp", wasApp);
         document.title = JSON.stringify(wasApp);
-		wasApp.changedSettings = 1;
-		delete wasApp.changedSettings;
-		// console.log("wasApp", wasApp);
+        wasApp.changedSettings = 1;
+        delete wasApp.changedSettings;
+        // console.log("wasApp", wasApp);
     };
-
-    updateDockNum = function () {
+    updateDockNum = function() {
         // console.log( "updateDockNum is running" );
-        wasApp.messageCount = 0;
-        $(".unread-count").each(function(i, v){
-            var $this = $(this);
-            // console.log($this.html(), $this.text(), $this);
-            wasApp.messageCount += parseInt( $this.text() );
+        var selector = ".chat.unread"
+        var messageCount = 0;
+        var elementCount = $tev(selector).length;
+        // console.log( "elementCount is", elementCount);
+        $tev(selector).each(function(i, v) {
+            var $this = $tev(this).find(".chat-secondary .chat-meta > span > div > span");
+            if ($this.length > 0) {
+                // console.log($this.html(), $this.text(), $this);
+                messageCount += parseInt($this.text());
+            }
+            if(i == elementCount-1){
+                // console.log("Message count sent", messageCount);
+                ipcR.send('message-count', messageCount) 
+            }
         });
-        setTimeout(function() {
-            // console.log(wasApp, JSON.stringify(wasApp));
-            document.title = JSON.stringify(wasApp);
-        }, 25)
+        if(elementCount == 0){
+            ipcR.send('no-message');
+        }
     };
-
-	$(document).delegate('.chat-meta', 'DOMSubtreeModified', function(event) {
-        updateDockNum();
+    $tev(document).delegate('.chat-meta', 'DOMSubtreeModified', function(event) {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout("updateDockNum()", 250);
     });
-
-    var trialCount = 3;
-    function updateDockNumRecursive() {
-        setTimeout( function () {
-            // console.log( "trialCount", trialCount );
-            if( trialCount >= 0 ){
-                updateDockNum();
-                updateDockNumRecursive();
-            };
-        }, 1000 );
-        trialCount--;
-    };
 });
