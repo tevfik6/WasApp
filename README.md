@@ -6,7 +6,7 @@ WasApp is an app uses WhatsApp Web interface on :zap:[Electron](https://electron
 #### All communication between the user and WhatsApp servers is handled by official WhatsApp Web App (https://web.whatsapp.com/)
 
 # Download
-:floppy_disk: [Latest Release - v1.0.0](https://github.com/tevfik6/WasApp/releases/tag/v1.0.0) 
+:floppy_disk: [Latest Release - v1.1.0](https://github.com/tevfik6/WasApp/releases/tag/v1.1.0) 
 
 # Screeshot
 ![WasApp Logo](images/ScreenShot01.png)
